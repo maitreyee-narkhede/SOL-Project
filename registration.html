@@ -1,0 +1,34 @@
+<html>
+	<script>
+  function register() {
+    var data = new FormData();
+    data.append("username", document.getElementById("username").value);
+    data.append("password", document.getElementById("password").value);
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function() {
+      if (this.readyState === 4) {
+        var output = JSON.parse(this.responseText);
+        if (output["code"] == "true") {
+          alert(output["text"]);
+          localStorage.setItem("username",document.getElementById("username").value);
+          window.location.href = "otp_verification.html";
+        } else {
+          alert(output["text"]);
+        }
+      }
+    });
+    xhr.open("POST", "http://localhost:8080/register");
+    xhr.send(data);
+  }
+</script>
+  <body style="background-color:ivory;">
+      <p>Enter username:</p>
+      <p>(The username will be your email address.)</p>
+      <p><input type="text" id="username" name="username" required></p>
+      <p>Enter password:</p>
+      <p>Password should be atleast of 8-16 characters with a numeric value and a special symbol.</p>
+      <p><input type="password" id="password" name="password" required></p>
+      <p>Already have an account?<a href="login.html">Sign in</a></p>
+      <p><input type="button" onclick="register();" value="Register" ></p>
+  </body>
+</html>
