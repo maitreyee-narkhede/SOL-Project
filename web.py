@@ -23,12 +23,7 @@ app.config["MAIL_PASSWORD"] = "***********"
 app.config["MAIL_USE_TLS"] = False
 app.config["MAIL_USE_SSL"] = False
 
-
-#def hash_password(msg):
-#    h = sha256()
-#    h.update(msg.encode())
-#    hash = h.hexdigest()
-#    return hash
+# RSA ENCRYPTION FUNCTIONS
 
 def convertToInt(msg_str):
     res = 0
@@ -158,7 +153,6 @@ def login():
 def payment():
     get_srno = "select srno from login where username='%s';"
     insert = "insert into card(id, accountno, phoneno, cardno, cvv) values(%d, '%s', '%s', '%s', '%s');"
-    #insert = "insert into cardinfo(id, accountno, phoneno) values(%d, '%s', %d);"
     username = request.form["username"]
     account = request.form["account"]
     card = request.form["card"]
