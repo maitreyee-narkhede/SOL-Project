@@ -121,7 +121,7 @@ def validation():
 @app.route('/login', methods=['POST'])
 @cross_origin()
 def login():
-    valid = "select username, password,validate from login where username='%s';"
+    valid = "select username, password,validate from login where username='%s' and password='%s';"
     username = request.form['username']
     password = request.form['password']
 
@@ -131,7 +131,7 @@ def login():
         return jsonify(object)
     else:
         cur.execute("rollback")
-        cur.execute(valid % (username))
+        cur.execute(valid % (username, password))
         result = cur.fetchone()
         if result is None:
             object = {'code': 'false',
