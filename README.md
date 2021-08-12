@@ -8,6 +8,7 @@ The aim of this system is to allow secure payment in any online activity. It sto
 It ensures that the transaction details as well as the passwords are encrypted safely and the system is impregnable.
 
 Database – postgreSQL database
+
 Attachments – psycopg2, FLASK
 Server - Apache
 Language – Python3
