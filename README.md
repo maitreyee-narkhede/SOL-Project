@@ -10,6 +10,9 @@ It ensures that the transaction details as well as the passwords are encrypted s
 Database – postgreSQL database
 
 Attachments – psycopg2, FLASK
+
 Server - Apache
+
 Language – Python3
+
 Compatible browsers – Firefox, Chome, Safari 
