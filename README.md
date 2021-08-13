@@ -1,5 +1,5 @@
 # SOL-Project
-RSA Ecryption - Secure card payment
+RSA Encryption - Secure card payment
 Implementation of this system will aid minimization of time for the user, and will make it easier to for them to access their account.
 This application will be designed only for the payment of a product or service. 
 It is not a stand-alone application. It will need to be integrated with a website which requires the transaction service. The service provided by the application is free of cost, which also includes the transaction cost.
